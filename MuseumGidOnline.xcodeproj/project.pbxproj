@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		499CD6252ED4BD85005AC558 /* NetworkKIT in Frameworks */ = {isa = PBXBuildFile; productRef = 499CD6242ED4BD85005AC558 /* NetworkKIT */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		49EB73142ED459DC00564F90 /* MuseumGidOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseumGidOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -15,6 +19,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				NetworkKIT,
 			);
 			target = 49EB73132ED459DC00564F90 /* MuseumGidOnline */;
 		};
@@ -36,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499CD6252ED4BD85005AC558 /* NetworkKIT in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +84,7 @@
 			);
 			name = MuseumGidOnline;
 			packageProductDependencies = (
+				499CD6242ED4BD85005AC558 /* NetworkKIT */,
 			);
 			productName = MuseumGidOnline;
 			productReference = 49EB73142ED459DC00564F90 /* MuseumGidOnline.app */;
@@ -107,6 +114,9 @@
 			);
 			mainGroup = 49EB730B2ED459DC00564F90;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				499CD6232ED4BD85005AC558 /* XCLocalSwiftPackageReference "MuseumGidOnline/NetworkKIT" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 49EB73152ED459DC00564F90 /* Products */;
 			projectDirPath = "";
@@ -345,6 +355,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		499CD6232ED4BD85005AC558 /* XCLocalSwiftPackageReference "MuseumGidOnline/NetworkKIT" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = MuseumGidOnline/NetworkKIT;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		499CD6242ED4BD85005AC558 /* NetworkKIT */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkKIT;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 49EB730C2ED459DC00564F90 /* Project object */;
 }
