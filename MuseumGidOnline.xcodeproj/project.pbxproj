@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4912E3302ED59B9500E712DD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4912E32F2ED59B9500E712DD /* SnapKit */; };
 		499CD6252ED4BD85005AC558 /* NetworkKIT in Frameworks */ = {isa = PBXBuildFile; productRef = 499CD6242ED4BD85005AC558 /* NetworkKIT */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				499CD6252ED4BD85005AC558 /* NetworkKIT in Frameworks */,
+				4912E3302ED59B9500E712DD /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +87,7 @@
 			name = MuseumGidOnline;
 			packageProductDependencies = (
 				499CD6242ED4BD85005AC558 /* NetworkKIT */,
+				4912E32F2ED59B9500E712DD /* SnapKit */,
 			);
 			productName = MuseumGidOnline;
 			productReference = 49EB73142ED459DC00564F90 /* MuseumGidOnline.app */;
@@ -116,6 +119,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				499CD6232ED4BD85005AC558 /* XCLocalSwiftPackageReference "MuseumGidOnline/NetworkKIT" */,
+				4912E32E2ED59B9500E712DD /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 49EB73152ED459DC00564F90 /* Products */;
@@ -160,7 +164,6 @@
 				INFOPLIST_FILE = MuseumGidOnline/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -192,7 +195,6 @@
 				INFOPLIST_FILE = MuseumGidOnline/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,7 +365,23 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		4912E32E2ED59B9500E712DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		4912E32F2ED59B9500E712DD /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4912E32E2ED59B9500E712DD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		499CD6242ED4BD85005AC558 /* NetworkKIT */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NetworkKIT;
