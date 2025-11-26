@@ -10,7 +10,7 @@ import UIKit
 enum ListCardsRouterCases: Equatable {
     
     case dissmiss
-    case listCards
+    case weather
 
     static func == (lhs: ListCardsRouterCases, rhs: ListCardsRouterCases) -> Bool {
         return true
@@ -34,7 +34,7 @@ final class ListCardsRouter: ListCardsRouterProtocol {
     func navigate(to route: ListCardsRouterCases) {
         switch route {
       
-        case .listCards:
+        case .weather:
             let vc = ListCardsBuilder().makeVC(dependencies)
             self.view?.navigationController?.pushViewController(vc, animated: true)
 

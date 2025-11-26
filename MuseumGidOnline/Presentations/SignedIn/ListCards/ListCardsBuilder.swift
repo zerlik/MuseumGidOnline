@@ -13,10 +13,10 @@ final class ListCardsBuilder: Builders {
     func makeVC(_ dependencies: Dependencies) -> NibViewController {
 
         let service: NetworkProvider = dependencies.service
-        let viewModel: ListCardsViewModelProtocol = ListCardsViewModel()
-        let view = ListCardsViewController(viewModel: viewModel, service: service)
+        let viewModel: ListCardsViewModelProtocol = ListCardsViewModel(service: service)
+        let view = ListCardsViewController(viewModel: viewModel)
         let router: ListCardsRouterProtocol = ListCardsRouter(view: view, dependencies: dependencies)
-        view.router = router
+        viewModel.router = router
         
         view.modalPresentationStyle = .fullScreen
         return view

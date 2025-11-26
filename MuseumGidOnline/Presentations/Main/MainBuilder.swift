@@ -13,10 +13,10 @@ final class MainBuilder: Builders {
     func makeVC(_ dependencies: Dependencies) -> NibViewController {
 
         let service: NetworkProvider = dependencies.service
-        let viewModel: MainViewModelProtocol = MainViewModel()
-        let view = MainViewController(viewModel: viewModel, service: service)
+        let viewModel: MainViewModelProtocol = MainViewModel(service: service)
+        let view = MainViewController(viewModel: viewModel)
         let router: MainRouterProtocol = MainRouter(view: view, dependencies: dependencies)
-        view.router = router
+        viewModel.router = router
         
         view.modalPresentationStyle = .fullScreen
         return view

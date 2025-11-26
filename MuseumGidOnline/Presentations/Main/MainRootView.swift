@@ -23,33 +23,37 @@ final class MainRootView: NibView {
         constructHierarchy()
         activateConstraints()
         style()
+        loadUserSession()
     }
 }
 
 private extension MainRootView {
     
     private func constructHierarchy() {
-        addSubviews(activityView)
-//        mainStackView.addArrangedSubviews(
-//            loadingImage
-//        )
+        addSubviews(mainStackView, activityView)
+        mainStackView.addArrangedSubviews(
+            loadingImage
+        )
     }
     
     func activateConstraints() {
-//        mainStackView.snp.makeConstraints { make in
-//            make.edges.equalToSuperview()
-//        }
         activityView.snp.makeConstraints { make in
             make.center.equalToSuperview()
+        }
+        mainStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
     
     func style() {
-//        backgroundColor = .blueBG
-//        mainStackView.backgroundColor = .blueBG
-//        loadingImage.backgroundColor = .gray
-//        loadingImage.contentMode = .scaleAspectFit
+        backgroundColor = .blueBG
+        mainStackView.backgroundColor = .clear
+        loadingImage.contentMode = .scaleAspectFit
         activityView.startAnimating()
+    }
+    
+    private func loadUserSession() {
+        viewModel.loadUserSession()
     }
 }
 

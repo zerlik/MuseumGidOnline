@@ -15,12 +15,9 @@ protocol MainViewControllerProtocol: AnyObject {
 final class MainViewController: NibViewController {
     
     private let viewModel: MainViewModelProtocol
-    private let service: NetworkProvider
-    var router: MainRouterProtocol?
-    
-    init( viewModel: MainViewModelProtocol, service: NetworkProvider) {
+  
+    init( viewModel: MainViewModelProtocol) {
         self.viewModel = viewModel
-        self.service = service
         super.init()
     }
     
@@ -30,7 +27,6 @@ final class MainViewController: NibViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        router?.navigate(to: .listCards)
     }
     
     @objc private func authButtonAction(){

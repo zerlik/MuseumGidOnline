@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import NetworkKIT
 
 protocol ListCardsControllerProtocol: AnyObject {
@@ -15,29 +16,43 @@ protocol ListCardsControllerProtocol: AnyObject {
 final class ListCardsViewController: NibViewController {
     
     private let viewModel: ListCardsViewModelProtocol
-    private let service: NetworkProvider
-    var router: ListCardsRouterProtocol?
     
-    init( viewModel: ListCardsViewModelProtocol, service: NetworkProvider) {
+    init( viewModel: ListCardsViewModelProtocol) {
         self.viewModel = viewModel
-        self.service = service
         super.init()
     }
     
+    private var hostingController: UIHostingController<ListCardView>?
+    
     override func loadView() {
-        view = ListCardsRootView(viewModel: viewModel)
+        guard let viewModel = viewModel as? ListCardsViewModel else {
+            fatalError("viewModel must be instance of ListCardsViewModel")
+        }
+        
+        let swiftUIView = ListCardView(viewModel: viewModel)
+        let hostingController = UIHostingController(rootView: swiftUIView)
+        self.hostingController = hostingController
+        hostingController.view.backgroundColor = .systemBackground
+        
+        view = UIView()
+        view.backgroundColor = .systemBackground
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-
-    }
-    
-    @objc private func authButtonAction(){
-    }
-    
-    @objc private func appButtonAction(){
+        
+        guard let hostingController = hostingController else { return }
+        
+        addChild(hostingController)
+        view.addSubview(hostingController.view)
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        hostingController.didMove(toParent: self)
     }
 }
 
