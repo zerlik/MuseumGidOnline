@@ -43,6 +43,10 @@ extension String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
+    func imaged() -> UIImage? {
+        return UIImage(named: self, in: BundleHelper.bundle(), compatibleWith: nil)
+    }
+    
     func widthOfString(usingFont font: UIFont) -> CGFloat {
         let fontAttributes = [NSAttributedString.Key.font: font]
         let size = self.size(withAttributes: fontAttributes)

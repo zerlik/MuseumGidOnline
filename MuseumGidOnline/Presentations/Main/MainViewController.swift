@@ -30,7 +30,7 @@ final class MainViewController: NibViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        router?.navigate(to: .listCards)
+//        router?.navigate(to: .listCards)
     }
     
     @objc private func authButtonAction(){
