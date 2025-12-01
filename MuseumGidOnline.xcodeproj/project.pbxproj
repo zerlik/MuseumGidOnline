@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4900C6FF2EDB750F002780A4 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 4900C6FE2EDB750F002780A4 /* GoogleSignIn */; };
+		4900C7012EDB750F002780A4 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4900C7002EDB750F002780A4 /* GoogleSignInSwift */; };
 		4912E3302ED59B9500E712DD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4912E32F2ED59B9500E712DD /* SnapKit */; };
 		499CD6252ED4BD85005AC558 /* NetworkKIT in Frameworks */ = {isa = PBXBuildFile; productRef = 499CD6242ED4BD85005AC558 /* NetworkKIT */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,8 @@
 			files = (
 				499CD6252ED4BD85005AC558 /* NetworkKIT in Frameworks */,
 				4912E3302ED59B9500E712DD /* SnapKit in Frameworks */,
+				4900C6FF2EDB750F002780A4 /* GoogleSignIn in Frameworks */,
+				4900C7012EDB750F002780A4 /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +92,8 @@
 			packageProductDependencies = (
 				499CD6242ED4BD85005AC558 /* NetworkKIT */,
 				4912E32F2ED59B9500E712DD /* SnapKit */,
+				4900C6FE2EDB750F002780A4 /* GoogleSignIn */,
+				4900C7002EDB750F002780A4 /* GoogleSignInSwift */,
 			);
 			productName = MuseumGidOnline;
 			productReference = 49EB73142ED459DC00564F90 /* MuseumGidOnline.app */;
@@ -120,6 +126,8 @@
 			packageReferences = (
 				499CD6232ED4BD85005AC558 /* XCLocalSwiftPackageReference "MuseumGidOnline/NetworkKIT" */,
 				4912E32E2ED59B9500E712DD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4900C6FD2EDB750F002780A4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				493C4DC62EDD71A8008F8D88 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 49EB73152ED459DC00564F90 /* Products */;
@@ -171,7 +179,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.home.-MuseumGidOnline.MuseumGidOnline";
+				PRODUCT_BUNDLE_IDENTIFIER = belarusmini.by.MuseumGidOnline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -202,7 +210,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.home.-MuseumGidOnline.MuseumGidOnline";
+				PRODUCT_BUNDLE_IDENTIFIER = belarusmini.by.MuseumGidOnline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -366,6 +374,14 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4900C6FD2EDB750F002780A4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		4912E32E2ED59B9500E712DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -374,9 +390,27 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		493C4DC62EDD71A8008F8D88 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4900C6FE2EDB750F002780A4 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4900C6FD2EDB750F002780A4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		4900C7002EDB750F002780A4 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4900C6FD2EDB750F002780A4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
 		4912E32F2ED59B9500E712DD /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4912E32E2ED59B9500E712DD /* XCRemoteSwiftPackageReference "SnapKit" */;
