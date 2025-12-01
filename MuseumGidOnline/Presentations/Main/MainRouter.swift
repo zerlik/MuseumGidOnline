@@ -39,8 +39,9 @@ final class MainRouter: MainRouterProtocol {
             self.view?.navigationController?.pushViewController(vc, animated: true)
 
         case .listCards:
-            let vc = ListCardsBuilder().makeVC(dependencies)
-            self.view?.navigationController?.pushViewController(vc, animated: true)
+            let tabBarController = MainTabBarController(dependencies: dependencies)
+            tabBarController.modalPresentationStyle = .fullScreen
+            self.view?.navigationController?.pushViewController(tabBarController, animated: true)
 
         case .dissmiss:
             dissmisVC()

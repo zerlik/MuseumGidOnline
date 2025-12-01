@@ -47,7 +47,17 @@ final class ListCardsViewModel: ListCardsViewModelProtocol, ObservableObject {
             City(id: "2", name: "Санкт-Петербург"),
             City(id: "3", name: "Казань"),
             City(id: "4", name: "Екатеринбург"),
-            City(id: "5", name: "Новосибирск")
+            City(id: "5", name: "Новосибирск"),
+            City(id: "6", name: "Москва"),
+            City(id: "7", name: "Санкт-Петербург"),
+            City(id: "8", name: "Казань"),
+            City(id: "9", name: "Екатеринбург"),
+            City(id: "10", name: "Новосибирск"),
+            City(id: "11", name: "Москва"),
+            City(id: "12", name: "Санкт-Петербург"),
+            City(id: "13", name: "Казань"),
+            City(id: "14", name: "Екатеринбург"),
+            City(id: "15", name: "Новосибирск")
         ]
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in

@@ -40,7 +40,8 @@ final class MainViewModel: MainViewModelProtocol {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             switch userSession {
             case .none:
-                self.router?.navigate(to: .auth)
+                self.router?.navigate(to: .listCards)
+//                self.router?.navigate(to: .auth)
             case .some(let userSession):
                 if userSession.authState == .authorized {
                     self.router?.navigate(to: .listCards)
