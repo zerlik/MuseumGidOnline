@@ -10,39 +10,43 @@ import Combine
 import NetworkKIT
 
 protocol MainViewModelProtocol: AnyObject {
-    var router: MainRouterProtocol?{get set}
+    var router: MainRouterProtocol? { get set }
     func loadUserSession()
 }
 
-final class MainViewModel: MainViewModelProtocol  {
+final class MainViewModel: MainViewModelProtocol {
     
     var router: MainRouterProtocol?
     private let service: NetworkProvider
+    private let userSessionRepository: UserSessionRepository
+    private var subscriptions = Set<AnyCancellable>()
     
-    init(service: NetworkProvider) {
+    init(service: NetworkProvider, userSessionRepository: UserSessionRepository = DefaultUserSessionRepository()) {
         self.service = service
+        self.userSessionRepository = userSessionRepository
     }
     
     func loadUserSession() {
-//        loginSubscription = Publishers
-//            .CombineLatest(
-//                userSessionRepository.fetchUserSession(),
-//                bundleSettingsSubject
-//            )
-//            .receive(on: DispatchQueue.main)
-//            .sink { [weak self] userSession, bundleSettings in
-                
-        goToNextScreen(userSession: UserSession())
+        userSessionRepository.fetchUserSession()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] userSession in
+                self?.goToNextScreen(userSession: userSession)
+            }
+            .store(in: &subscriptions)
     }
     
     private func goToNextScreen(userSession: UserSession?) {
-        // for example only
+        // for example only Small delay for splash screen effect
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             switch userSession {
             case .none:
                 self.router?.navigate(to: .auth)
             case .some(let userSession):
-                self.router?.navigate(to: .listCards)
+                if userSession.authState == .authorized {
+                    self.router?.navigate(to: .listCards)
+                } else {
+                    self.router?.navigate(to: .auth)
+                }
             }
         }
     }

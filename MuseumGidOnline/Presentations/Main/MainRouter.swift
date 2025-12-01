@@ -35,8 +35,8 @@ final class MainRouter: MainRouterProtocol {
     func navigate(to route: MainRouterCases) {
         switch route {
         case .auth:
-            let vc = ListCardsBuilder().makeVC(dependencies)
-            self.view?.present(vc, animated: true)
+            let vc = AuthBuilder().makeVC(dependencies)
+            self.view?.navigationController?.pushViewController(vc, animated: true)
 
         case .listCards:
             let vc = ListCardsBuilder().makeVC(dependencies)

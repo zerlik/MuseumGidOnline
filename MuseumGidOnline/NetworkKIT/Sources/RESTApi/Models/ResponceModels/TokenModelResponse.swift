@@ -17,8 +17,8 @@ struct TokenModelResponse: Decodable {
     var creationTime: Date? = Date()
     
     func saveInKeychain(){
-//        KeychainTokens().accessToken = accessToken
-//        KeychainTokens().refreshToken = refreshToken
+        TokenStorage.shared.accessToken = accessToken
+        TokenStorage.shared.refreshToken = refreshToken
     }
 }
 
