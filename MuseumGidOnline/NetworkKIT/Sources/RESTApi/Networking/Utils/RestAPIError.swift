@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct ApplicationError: Error, CustomStringConvertible, Equatable, Decodable {
+public struct ApplicationError: Error, CustomStringConvertible, Equatable, Decodable {
 
-    var description: String {
+    public var description: String {
         if statusCode == 401 {
             return NSLocalizedString("LoginPassword.Email.AuthError401", comment: "")
         }

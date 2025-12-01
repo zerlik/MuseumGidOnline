@@ -7,17 +7,17 @@
 
 import Foundation
 
-public struct AppleLoginRequest: Codable {
-    let idToken: String
-    let email: String?
-    let fullName: String?
-}
-
-public struct GoogleLoginRequest: Codable {
-    let idToken: String
-    let email: String?
-    let fullName: String?
-}
-
-
-
+//public struct AppleLoginRequest: Codable {
+//    let idToken: String
+//    let email: String?
+//    let fullName: String?
+//}
+//
+//public struct GoogleLoginRequest: Codable {
+//    let idToken: String
+//    let email: String?
+//    let fullName: String?
+//}
+//
+//
+//

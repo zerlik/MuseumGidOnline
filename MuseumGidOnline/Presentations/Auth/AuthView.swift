@@ -120,16 +120,5 @@ struct AuthView: View {
     }
 }
 
-#Preview {
-    AuthView(
-        viewModel: AuthViewModel(
-            socialAuthService: SocialAuthService(),
-            socialAuthClient: ApiClientSocialAuth(network: NetworkFetcher()),
-            userSession: UserSession()
-        ),
-        presentingViewController: nil
-    )
-}
-
 
 

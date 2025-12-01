@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TokenModelResponse: Decodable {
+public struct TokenModelResponse: Decodable {
     var accessToken: String
     var tokenType: String
     var refreshToken: String?
@@ -16,9 +16,9 @@ struct TokenModelResponse: Decodable {
     var jti: String
     var creationTime: Date? = Date()
     
-    func saveInKeychain(){
-        TokenStorage.shared.accessToken = accessToken
-        TokenStorage.shared.refreshToken = refreshToken
+   public func saveInKeychain(){
+//        TokenStorage.shared.accessToken = accessToken
+//        TokenStorage.shared.refreshToken = refreshToken
     }
 }
 

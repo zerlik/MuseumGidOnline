@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol ApiClientSocialAuthProtocol {
+public protocol ApiClientSocialAuthProtocol {
     func appleLogin(requestData: Data) -> AnyPublisher<TokenModelResponse, ApplicationError>?
     func googleLogin(requestData: Data) -> AnyPublisher<TokenModelResponse, ApplicationError>?
 }

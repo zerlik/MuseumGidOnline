@@ -51,8 +51,6 @@ final class AuthViewModel: AuthViewModelProtocol, ObservableObject {
         self.userSession = userSession
     }
     
-    // MARK: - Apple Sign In
-    
     func signInWithAppleTapped() {
         guard !isLoading else { return }
         
@@ -78,8 +76,6 @@ final class AuthViewModel: AuthViewModelProtocol, ObservableObject {
             .store(in: &subscriptions)
     }
     
-    // MARK: - Google Sign In
-    
     func signInWithGoogleTapped(presentingViewController: UIViewController) {
         guard !isLoading else { return }
         
@@ -104,8 +100,6 @@ final class AuthViewModel: AuthViewModelProtocol, ObservableObject {
             }
             .store(in: &subscriptions)
     }
-    
-    // MARK: - Private Methods
     
     private func exchangeCredentialForToken(
         credential: SocialAuthCredential,
@@ -160,23 +154,32 @@ final class AuthViewModel: AuthViewModelProtocol, ObservableObject {
     private func handleSuccessfulAuth(_ tokenResponse: TokenModelResponse) {
         // Save tokens to Keychain
         tokenResponse.saveInKeychain()
-        
-        // Update user session
         userSession.authState = .authorized
-        
-        // Navigate to signed in flow
         router?.navigate(to: .signedIn)
     }
     
     private func handleError(_ error: AuthError) {
         switch error {
         case .cancelled:
-            // User cancelled, don't show error
             errorMessage = nil
         default:
             errorMessage = error.localizedDescription
         }
     }
+}
+
+
+
+public struct AppleLoginRequest: Codable {
+    let idToken: String
+    let email: String?
+    let fullName: String?
+}
+
+public struct GoogleLoginRequest: Codable {
+    let idToken: String
+    let email: String?
+    let fullName: String?
 }
 
 
