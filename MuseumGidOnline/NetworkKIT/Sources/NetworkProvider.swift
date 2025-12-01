@@ -23,10 +23,10 @@ public class NetworkProvider {
         return ApiClientAuth(network: network)
     }
     
-    func makeSocialAuthNetwork() -> ApiClientAuthProtocols {
-       let network = NetworkFetcher()
-       return ApiClientAuth(network: network)
-   }
+   public func makeSocialAuthNetwork() -> ApiClientSocialAuthProtocol {
+        let network = NetworkFetcher()
+        return ApiClientSocialAuth(network: network)
+    }
 
     //GRPC API
 //    func makeUserGRPCNetwork() -> UserService {

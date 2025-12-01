@@ -152,8 +152,8 @@ final class AuthViewModel: AuthViewModelProtocol, ObservableObject {
     }
     
     private func handleSuccessfulAuth(_ tokenResponse: TokenModelResponse) {
-        // Save tokens to Keychain
-        tokenResponse.saveInKeychain()
+        TokenStorage.shared.accessToken = tokenResponse.accessToken
+        TokenStorage.shared.refreshToken = tokenResponse.refreshToken
         userSession.authState = .authorized
         router?.navigate(to: .signedIn)
     }
